@@ -42,10 +42,10 @@ Write tests using the `assert` module in Node.js or whatever testing library you
 
 - [x] Artifact produced is a fork of the [coding-exercises-js][coding-exercises-js] repo.
 - [ ] Tests and correct implementations exist for the following exercises (it is recommended that you complete them in this order):
-  - [ ] 1. Guess The Number
+  - [x] 1. Guess The Number (No tests written per Tanner)
   - [ ] 2. Scrab-Bag
   - [x] 3. String Indices
-  - [ ] 4. Fibonacci Bases
+  - [x] 4. Fibonacci Bases
   - [x] 5. The Disemvowling
   - [ ] 6. Where in the JSON?
   - [ ] 7. Who Wants A Date?
@@ -57,7 +57,7 @@ Write tests using the `assert` module in Node.js or whatever testing library you
   - [ ] 13. Braille
   - [ ] 14. String Permutations
   - [ ] 15. Finite State Gate
-- [ ] Can run all tests with `npm test`.
+- [x] Can run all tests with `npm test`.
 - [ ] All tests are passing.
 - [ ] Repository includes a README file with basic installation and setup instructions.
 - [x] All dependencies are properly declared in `package.json`.
