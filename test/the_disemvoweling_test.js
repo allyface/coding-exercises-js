@@ -3,7 +3,7 @@ import theDisemvoweling from '../src/the_disemvoweling'
 
 const string = 'i am groot'
 
-describe.only('theDisemvoweling()', () => {
+describe('theDisemvoweling()', () => {
   it('should be a function', function() {
     expect(theDisemvoweling).to.be.a('function')
   })
@@ -14,7 +14,6 @@ describe.only('theDisemvoweling()', () => {
 
   it('should return a string with no vowels and no spaces', function() {
     const output = 'mgrt'
-
     expect(theDisemvoweling(string)).to.equal(output)
   })
 })

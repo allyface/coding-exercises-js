@@ -1,29 +1,48 @@
 import { expect } from 'chai'
 import scrabBag from '../src/scrab_bag'
 
-const letterCounts = "12: E\r9: A, I\r8: O\r6: N, R, T\r4: L, S, U, D\r3: G\r2: B, C, M, P, F, H, V, W, Y, _\r1: K, J, X, Q, Z"
-const allZeroes = "0: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z"
+const letterCounts = {
+  '1': ['J', 'K', 'Q', 'X', 'Z'],
+  '2': ['B', 'C', 'F', 'H', 'M', 'P', 'V', 'W', 'Y', '_'],
+  '3': ['G'],
+  '4': ['D', 'L', 'S', 'U'],
+  '6': ['N', 'R', 'T'],
+  '8': ['O'],
+  '9': ['A', 'I'],
+  '12': ['E']}
 
-describe('scrabBag()', () => {
+const allZeroes = {'0': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '_']}
+
+describe.only('scrabBag()', () => {
   it('should be a function', function() {
     expect(scrabBag).to.be.a('function')
   })
 
-  xit('gives full letter count when given an empty string', function() {
+  it('gives full letter count when given an empty string', function() {
     const input = ""
     const output = letterCounts
-    expect(scrabBag(input)).to.equal(output)
+    expect(scrabBag(input)).to.deep.equal(output)
   })
 
-  xit('returns zero for every letter when all letters are used', function() {
+  it('returns zero for every letter when all letters are used', function() {
     const input = "EEEEEEEEEEEEAAAAAAAAAIIIIIIIIIOOOOOOOONNNNNNRRRRRRTTTTTTLLLLSSSSUUUUDDDDGGGBBCCMMPPFFHHVVWWYY__KJXQZ"
     const output = allZeroes
-    expect(scrabBag(input)).to.equal(output)
+    expect(scrabBag(input)).to.deep.equal(output)
   })
 
-  xit('returns correct letter count when only some letters are used', function() {
+  it('returns correct letter count when only some letters are used', function() {
     const input = "AERETOXMYCNS_B"
-    const output = "10: E\r9: I\r8: A\r7: O\r5: R, N, T\r4: U, L, D\r3: G, S\r2: P, H, F, V, W\r1: B, Y, J, K, M, Q, C, Z, _\r0: X"
-    expect(scrabBag(input)).to.equal(output)
+    const output = {
+      '0': ['X'],
+      '1': ['B', 'C', 'J', 'K', 'M', 'Q', 'Y', 'Z', '_'],
+      '2': ['F', 'H', 'P', 'V', 'W'],
+      '3': ['G', 'S'],
+      '4': ['D', 'L', 'U'],
+      '5': ['N', 'R', 'T'],
+      '7': ['O'],
+      '8': ['A'],
+      '9': ['I'],
+      '10': ['E']}
+    expect(scrabBag(input)).to.deep.equal(output)
   })
 })
